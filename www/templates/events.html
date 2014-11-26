@@ -1,0 +1,62 @@
+<ion-view title="Yopevent">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <div class="bar bar-subheader bar-assertive item-input-inset">
+   <label class="item-input-wrapper">
+    <i class="icon ion-ios7-search placeholder-icon"></i>
+    <input type="search" placeholder="Search event by location, organizer or date">
+  </label>
+  <button class="button button-clear">
+    Cancel
+  </button>
+  </div>
+  <ion-content class="has-header">
+  <!--
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/events/{{event.id}}">
+        {{playlist.title}}
+      </ion-item>
+    </ion-list>
+  -->
+    <br><br><br>
+	<center><h6 class="title">Pull to refresh</h6></center>
+	<ion-list card>
+    
+	<div class="item" ng-repeat="event in events" href="#/app/events/{{event.id}}">
+	  <div class="item item-avatar">
+       <img src="img/stantz.jpg">
+       <h2>{{event.organizer}}</h2>
+	   <p>December 11, 2014</p>
+     </div>
+
+     <div class="item item-body">
+       <img class="full-image" src="img/delorean.jpg">
+       <p>
+        {{event.location}}
+       </p>
+       <p>
+         <a href="#" class="subdued">1 Like</a>
+         <a href="#" class="subdued">5 Going</a>
+	     <a href="#" class="subdued">3 Shares</a>
+       </p>
+     </div>
+
+     <div class="item tabs tabs-secondary tabs-icon-left">
+       <a class="tab-item" href="#">
+        <i class="icon ion-thumbsup"></i>
+        Like
+       </a>
+       <a class="tab-item" href="#">
+        <i class="icon ion-chatbox"></i>
+        Go
+       </a>
+       <a class="tab-item" href="#">
+        <i class="icon ion-share"></i>
+        Share
+       </a>
+     </div>
+ </div>
+	</ion-list>
+  </ion-content>
+</ion-view>
